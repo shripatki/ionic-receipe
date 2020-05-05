@@ -1,18 +1,14 @@
-<ion-header > 
+<ion-header>
   <ion-toolbar color="primary">
     <ion-title>Receipe</ion-title>
-   
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-      <ion-item *ngFor="let receipe of receipes" [routerLink]="['./',receipe.id]">
-        <ion-avatar slot="start">
-          <ion-img [src]="receipe.imageUrl"></ion-img>
-        </ion-avatar>
-        <ion-label>{{receipe.title}}</ion-label>
-
-      </ion-item>
+    <app-receipe-item
+      *ngFor="let receipe of receipes"
+      [receipe]="receipe"
+    ></app-receipe-item>
   </ion-list>
 </ion-content>
